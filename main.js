@@ -1,6 +1,4 @@
 function onReady(){
-	console.log('Hello Chapter 2');
-
 
 	var button = document.getElementById("newPomo");
 	button.addEventListener("click", function() {
@@ -12,6 +10,12 @@ function onReady(){
 var backgroundImages = [
   "url(css/images/smallerApple.png)"
 ];
+
+function Timer() {
+	this.start_time = "00:00";
+	var timer = document.createElement('div');
+	timer.classname = "timer";
+}
 
 function Box() {
 	var wrapper = document.getElementById("wrapper");
@@ -26,13 +30,13 @@ function Box() {
 	box.style.height = 200 + 'px';
 	box.style.width = 300 + 'px';
 	box.className = "box";
-
-
-	box.style.backgroundColor = "#000";
+	box.style.backgroundColor = "#fff";
 	boxes.appendChild(box);
 
-
-
+	var timer = document.createElement('div')
+	timer.className = "timer";
+	timer.innerHTML = "00:00"
+	box.appendChild(timer);
 
 }
 
