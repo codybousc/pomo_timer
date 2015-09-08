@@ -13,8 +13,36 @@ var backgroundImages = [
 
 function Timer() {
 	this.start_time = "00:00";
-	var timer = document.createElement('div');
-	timer.classname = "timer";
+	this.target_id = "#timer";
+}
+
+Timer.prototype.init = function() {
+	this.reset();
+	setInterval(this.name + '.tick()', 1000);
+}
+
+Timer.prototype.reset = function() {
+	time = this.start_time.split(":");
+	this.minutes = parseInt(time_ary[0]);
+	this.seconds = parseInt(time_ary[1]);
+	this.update_target();
+}
+
+Timer.prototype.tick = function() {
+	if(this.seconds < 59 && this.minutes < 25) {
+			this.seconds += 1;
+			if(this.seconds == 59) {
+				this.minutes += 1;
+				this.seconds = 0;
+		}
+	}
+	this.update_target();
+}
+
+Timer.prototype.update_target = function() {
+	seconds = this.seconds;
+	if(seconds < 10) seconds = "0" + seconds;
+	$(this.target_id).val(this.minutes + ":" + seconds);
 }
 
 function Box() {
@@ -39,7 +67,5 @@ function Box() {
 	box.appendChild(timer);
 
 }
-
-
 
 window.onload = onReady;

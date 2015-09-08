@@ -2,7 +2,7 @@
 
 
 body {
-  background-color: black;
+  background-color: white;
   margin-left: 6.5%;
 }
 
@@ -46,5 +46,15 @@ body {
   margin-top: 25%;
   font-size: 50px;
   display: inline-block;
+}
 
-  }
+#timer {
+  height: 100px;
+  width: 200px;
+  background-color: black;
+  text-align: center;
+  margin-left: 15%;
+  margin-top: 25%;
+  font-size: 50px;
+  display: inline-block;
+}
